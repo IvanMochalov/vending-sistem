@@ -1,13 +1,9 @@
-.title {
-  font-weight: 400;
-  /* margin-bottom: 20px; */
-}
 .devicesList {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 40px 0;
+  padding: 0 0 40px ;
 }
 .noData_icon {
   margin-bottom: 10px;
@@ -17,4 +13,7 @@
 .noUser_text,
 .noData_text {
   font-size: 20px;
+}
+.loading {
+  text-align: center;
 }

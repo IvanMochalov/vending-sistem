@@ -26,7 +26,7 @@ export function Register() {
   const onSubmit: SubmitHandler<TShippingFiledRegister> = (data) => {
     console.log(data)
     reset()
-    navigate(Paths.home, {replace: true})
+    navigate(Paths.devices, {replace: true})
   }
   
   useEffect(() => {

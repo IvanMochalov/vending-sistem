@@ -24,3 +24,14 @@
 ::-webkit-scrollbar:hover {
     width: 9px;
   }
+.title {
+  padding: 10px 15px;
+  background-color: var(--orange06);
+  font-weight: 400;
+  border-radius: 40px;
+  font-size: 36px;
+  margin-bottom: 25px;
+  color: var(--whiteFF);
+  display: inline-block;
+  /* margin-bottom: 20px; */
+}

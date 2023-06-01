@@ -29,7 +29,7 @@ export function Login() {
     try {
       await loginUser(data).unwrap();
       reset()
-      navigate(Paths.home, {replace: true})
+      navigate(Paths.devices, {replace: true})
     } catch(err) {
       const maybeError = isErrorWithMessage(err)
 

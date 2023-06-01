@@ -21,7 +21,6 @@ export const Devices = () => {
       )}
       {!isLoading &&  (
         <>
-          <h1 className={styles.title}>Ваши аппараты</h1>
           <ul className={styles.devicesList}>
             {!user ? (
                <>
