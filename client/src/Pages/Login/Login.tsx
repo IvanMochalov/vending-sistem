@@ -102,7 +102,7 @@ export function Login() {
           {errors?.password && <p className={styles.form__error}>{errors.password.message}</p>}
         </div>
         <button type="submit" className={styles.form__button}>Войти</button>
-        <span className={styles.no_accaunt}>
+        <span className={styles.no_account}>
           Нет аккаунта?
           <Link to={Paths.register} className={styles.link__register} replace>
             Зарегистрируйтесь

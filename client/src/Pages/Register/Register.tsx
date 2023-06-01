@@ -141,7 +141,7 @@ export function Register() {
           {errors?.confirmPassword && <p className={styles.form__error}>{errors.confirmPassword.message}</p>}
         </div>
         <button type="submit" className={styles.form__button}>Войти</button>
-        <span className={styles.has_accaunt}>
+        <span className={styles.has_account}>
           Есть аккаунт?
           <Link to={Paths.login} className={styles.link__login} replace>
             Войдите
