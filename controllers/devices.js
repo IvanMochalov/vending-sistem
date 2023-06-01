@@ -12,7 +12,7 @@ const all = async (req, res) => {
         userId: req.user.id
       }
     });
-
+    
     res.status(200).json(devices);
   } catch {
     res.status(500).json({ message: 'Не удалось получить аппараты' });
@@ -25,11 +25,12 @@ const all = async (req, res) => {
  */
 const add = async (req, res) => {
   try {
-     const data = req.body;
+    
+    const data = req.body;
 
-     if (!data.modelName || !data.location) {
+    if (!data.modelName || !data.location) {
       return res.status(400).json({ message: 'Все поля обязательны' })
-     }
+    }
 
     const device = await prisma.device.create({
       data: {
@@ -52,8 +53,12 @@ const add = async (req, res) => {
  */
 const remove = async (req, res) => {
   // const { id } = req.body;
-  const { device_id } = req.params;
   try {
+    if(!req.params.device_id) {
+      throw Error('no device_id')
+    }
+    
+    const { device_id } = req.params;
     await prisma.device.delete({
       where: {
         id: device_id,
@@ -72,10 +77,14 @@ const remove = async (req, res) => {
  * @access Private
  */
 const edit = async (req, res) => {
-  const data = req.body;
   // const id = data.id;
-  const { device_id } = req.params;
   try {
+    if(!req.params.device_id) {
+      throw Error('no device_id')
+    }
+    
+    const data = req.body;
+    const { device_id } = req.params;
     await prisma.device.update({
       where: {
         id: device_id
@@ -95,8 +104,12 @@ const edit = async (req, res) => {
  * @access Private
  */
 const device = async (req, res) => {
-  const { device_id } = req.params;
   try {
+    if(!req.params.device_id) {
+      throw Error('no device_id')
+    }
+    
+    const { device_id } = req.params;
     const device = await prisma.device.findUnique({
       where: {
         id: device_id

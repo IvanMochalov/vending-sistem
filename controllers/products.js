@@ -10,7 +10,7 @@ const all = async (req, res) => {
     if(!req.params.device_id) {
       throw Error('no device_id')
     }
-
+    
     const { device_id } = req.params
 
     const products = await prisma.product.findMany({
@@ -66,7 +66,7 @@ const remove = async (req, res) => {
     if(!req.params.product_id) {
       throw Error('no product_id')
     }
-    console.log('remove params =>',req.params)
+
     const { product_id } = req.params;
     
     await prisma.product.delete({
@@ -91,7 +91,7 @@ const edit = async (req, res) => {
     if(!req.params.product_id) {
       throw Error('no product_id')
     }
-
+    
     const data = req.body;
     const { product_id } = req.params;
     
@@ -118,7 +118,8 @@ const product = async (req, res) => {
     if(!req.params.product_id) {
       throw Error('no product_id')
     }
-    const { product_id } = req.params;
+    
+    const {  product_id } = req.params;
     const product = await prisma.product.findUnique({
       where: {
         id: product_id,
