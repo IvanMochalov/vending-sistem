@@ -51,7 +51,7 @@ export function Login() {
   return ReactDOM.createPortal(
 		<div className={styles.modal}>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        <button className={styles.form__cancel} onClick={() => {navigate(Paths.home, {replace: true})}}>
+        <button className={styles.form__cancel} type="button" onClick={() => {navigate(Paths.home, {replace: true})}}>
           <Icon name={EIcons.cancel} size={28} className={styles.form__cancel_icon} />
         </button>
         <h2 className={styles.form__title}>Вход</h2>
@@ -101,7 +101,7 @@ export function Login() {
           <label className={styles.form__label}>Password</label>
           {errors?.password && <p className={styles.form__error}>{errors.password.message}</p>}
         </div>
-        <button type='submit' className={styles.form__button}>Войти</button>
+        <button type="submit" className={styles.form__button}>Войти</button>
         <span className={styles.no_accaunt}>
           Нет аккаунта?
           <Link to={Paths.register} className={styles.link__register} replace>

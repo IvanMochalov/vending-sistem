@@ -39,7 +39,7 @@ export function Register() {
   return ReactDOM.createPortal(
 		<div className={styles.modal}>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        <button className={styles.form__cancel} onClick={() => {navigate(Paths.home, {replace: true})}}>
+        <button className={styles.form__cancel} type="button" onClick={() => {navigate(Paths.home, {replace: true})}}>
           <Icon name={EIcons.cancel} size={28} className={styles.form__cancel_icon} />
         </button>
         <h2 className={styles.form__title}>Регистрация</h2>
@@ -140,7 +140,7 @@ export function Register() {
           <label className={styles.form__label}>Repeat your password</label>
           {errors?.confirmPassword && <p className={styles.form__error}>{errors.confirmPassword.message}</p>}
         </div>
-        <button type='submit' className={styles.form__button}>Войти</button>
+        <button type="submit" className={styles.form__button}>Войти</button>
         <span className={styles.has_accaunt}>
           Есть аккаунт?
           <Link to={Paths.login} className={styles.link__login} replace>

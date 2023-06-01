@@ -11,6 +11,7 @@
   flex-flow: row wrap;
   color: var(--black33);
   border: 1px solid var(--black99);
+  min-height: 120px;
 }
 .device:hover {
   border-color: var(--black33);
