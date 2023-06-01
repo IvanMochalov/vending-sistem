@@ -118,7 +118,7 @@ const product = async (req, res) => {
     if(!req.params.product_id) {
       throw Error('no product_id')
     }
-    
+    console.log('object', req.params)
     const {  product_id } = req.params;
     const product = await prisma.product.findUnique({
       where: {
