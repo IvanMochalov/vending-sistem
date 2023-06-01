@@ -15,9 +15,9 @@ export const productApi = api.injectEndpoints({
         method: 'GET'
       })
     }),
-    editProduct: builder.mutation<string, {device_id: string, product_id:string}>({
-      query: ({device_id, product_id}) => ({
-        url: `/devices/products/${device_id}/edit/${product_id}`,
+    editProduct: builder.mutation<string, Product>({
+      query: (product) => ({
+        url: `/devices/products/${product.deviceId}/edit/${product.id}`,
         method: 'PUT'
       })
     }),
