@@ -26,4 +26,4 @@ const slice = createSlice({
 })
 
 export default slice.reducer;
-export const selectDevices = (state: RootState) => state.devices;
+export const selectProducts = (state: RootState) => state.products;
