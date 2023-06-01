@@ -1,0 +1,67 @@
+.s60 {
+	width: 60px;
+	height: 60px;
+}
+.s40 {
+	width: 40px;
+	height: 40px;
+}
+.s28 {
+	width: 28px;
+	height: 28px;
+}
+.s20 {
+	width: 20px;
+	height: 20px;
+}
+.s16 {
+	width: 16px;
+	height: 16px;
+}
+.s15 {
+	width: 15px;
+	height: 15px;
+}
+.s14 {
+	width: 14px;
+	height: 14px;
+}
+.s12 {
+	width: 12px;
+	height: 12px;
+}
+.s10 {
+	width: 10px;
+	height: 10px;
+}
+
+.black {
+	fill: var(--black);
+}
+.orange {
+	fill: var(--orange);
+}
+.green {
+	fill: var(--green);
+}
+.white {
+	fill: var(--white);
+}
+.grayF4 {
+	fill: var(--grayF4);
+}
+.greyF3 {
+	fill: var(--greyF3);
+}
+.greyD9 {
+	fill: var(--greyD9);
+}
+.greyC4 {
+	fill: var(--greyC4);
+}
+.grey99 {
+	fill: var(--grey99);
+}
+.grey66 {
+	fill: var(--grey66);
+}

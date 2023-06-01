@@ -1,0 +1,101 @@
+@font-face {
+  font-family: 'SF UI Display';
+  /* src: url('../fonts/SFUIDisplayThin.eot'); */
+  src: local('SF UI Display Thin'), local('SF-UI-Display-Thin'),
+    url('./fonts/sf-ui-display-thin.woff2') format('woff2'),
+    url('./fonts/sf-ui-display-thin.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF UI Display';
+  /* src: url('../fonts/SFUIDisplayLight.eot'); */
+  src: local('SF UI Display Light'), local('SF-UI-Display-Light'),
+    url('./fonts/sf-ui-display-light.woff2') format('woff2'),
+    url('./fonts/sf-ui-display-light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF UI Display';
+  /* src: url('../fonts/SFUIDisplayRegular.eot'); */
+  src: local('SF UI Display Regular'), local('SF-UI-Display-Regular'),
+    url('./fonts/sf-ui-display-regular.woff2') format('woff2'),
+    url('./fonts/sf-ui-display-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+	font-family: 'SF UI Display';
+	/* src: url('../fonts/SFUIDisplayMedium.eot'); */
+	src: local('SF UI Display Medium'), local('SF-UI-Display-Medium'),
+  url('./fonts/sf-ui-display-medium.woff2') format('woff2'),
+  url('./fonts/sf-ui-display-medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF UI Display';
+  /* src: url('../fonts/SFUIDisplayBold.eot'); */
+  src: local('SF UI Display Bold'), local('SF-UI-Display-Bold'),
+    url('./fonts/sf-ui-display-bold.woff2') format('woff2'),
+    url('./fonts/sf-ui-display-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --black33:        #333333;
+  --black99:        #999999;
+  --blackC4:        #C4C4C4;
+  --greenA8:        #A8B64F;
+  --green89:        #899441;
+  --redEA:          #EA8979;
+  --redEE:          #EE735D;
+  --redDC:          #DC3E22;
+  --redB7:          #B7280F;
+  --whiteFF:        #FFFFFF;
+  --whiteF4:        #F4F4F4;
+  --whiteF2:        #F2F2F2;
+  --whiteE4:        #E4E4E4;
+  --whiteEA:        #EAEAEA;
+}
+
+body {
+  font-family: 'SF UI Display', sans-serif;
+  background-color: var(--whiteF2);
+  color: var(--black33);
+  user-select: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

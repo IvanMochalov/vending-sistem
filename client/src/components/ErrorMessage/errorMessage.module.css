@@ -1,0 +1,17 @@
+.error_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--whiteFF);
+  margin-top: 15px;
+  padding: 5px 10px;
+  width: 80%;
+  background-color: var(--redDC);
+  border: 2px solid var(--redB7);
+  border-radius: 10px;
+}
+.error_message {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
