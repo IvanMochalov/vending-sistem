@@ -17,13 +17,14 @@ export const deviceApi = api.injectEndpoints({
     }),
     editDevice: builder.mutation<string, Device>({
       query: (device) => ({
-        url: `/devices/edit/${device.id}`,
-        method: 'PUT'
+        url: `/devices/${device.id}/edit`,
+        method: 'PUT',
+        body: device
       })
     }),
     removeDevice: builder.mutation<string, string>({
       query: (device_id) => ({
-        url: `/devices/remove/${device_id}`,
+        url: `/devices/${device_id}/remove`,
         method: 'POST',
         body: { id: device_id }
       })

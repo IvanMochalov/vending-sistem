@@ -1,0 +1,54 @@
+.description__container {
+  display: flex;
+}
+.products__description {
+  width: 60%;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 25px;
+}
+.device__management{
+  width: calc(40% - 25px);
+  display: inline-flex;
+  flex-direction: column;
+}
+.device__description {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 100px;
+  margin-bottom: 25px;
+}
+.products__description,
+.device__description {
+  padding: 15px;
+  border: 1px solid var(--greenA8);
+  border-radius: 20px;
+}
+.location__value {
+  justify-self: self-end;
+}
+.device__controller {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.controller__btn {
+  border: none;
+  outline: none;
+  padding: 5px 12px;
+  font-size: 14px;
+  border-radius: 20px;
+  color: var(--whiteFF);
+  font-weight: 300;
+  cursor: pointer;
+}
+.controller__btn:hover {
+  opacity: .9;
+}
+.controller__remove {
+  background-color: var(--redDC);
+}
+.controller__edit {
+  background-color: var(--greenA8);
+}

@@ -17,13 +17,13 @@ export const productApi = api.injectEndpoints({
     }),
     editProduct: builder.mutation<string, Product>({
       query: (product) => ({
-        url: `/devices/products/${product.deviceId}/edit/${product.id}`,
+        url: `/devices/products/${product.deviceId}/${product.id}/edit`,
         method: 'PUT'
       })
     }),
     removeProduct: builder.mutation<string, {device_id: string, product_id:string}>({
       query: ({device_id, product_id}) => ({
-        url: `/devices/products/${device_id}/remove/${product_id}`,
+        url: `/devices/products/${device_id}/${product_id}/remove`,
         method: 'POST',
         body: { id: product_id, deviceId: device_id }
       })

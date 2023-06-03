@@ -24,14 +24,43 @@
 ::-webkit-scrollbar:hover {
     width: 9px;
   }
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
 .title {
   padding: 10px 15px;
   background-color: var(--orange06);
   font-weight: 400;
   border-radius: 40px;
   font-size: 36px;
-  margin-bottom: 25px;
   color: var(--whiteFF);
-  display: inline-block;
-  /* margin-bottom: 20px; */
+}
+.add__device,
+.title_little {
+  padding: 10px 15px;
+  background-color: var(--orange4b);
+  font-weight: 400;
+  border-radius: 40px;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--whiteFF);
+}
+.add__device {
+  display: flex;
+  background-color: var(--violet);
+}
+.add__icon {
+  fill: var(--whiteFF);
+  margin-right: 5px;
+}
+.user__name {
+  padding: 10px 25px;
+  background-color: var(--violet);
+  font-weight: 400;
+  border-radius: 40px;
+  font-size: 36px;
+  color: var(--whiteFF);
 }

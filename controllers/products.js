@@ -39,6 +39,7 @@ const add = async (req, res) => {
     const { device_id } = req.params
     const data = req.body;
 
+
     if (!data.name || !data.count || !data.price) {
       return res.status(400).json({ message: 'Все поля обязательны' })
     }
@@ -57,7 +58,7 @@ const add = async (req, res) => {
 
 /**
  * 
- * @route POST /api/devices/products/:device_id/remove/:product_id
+ * @route POST /api/devices/products/:device_id/:product_id/remove
  * @desc Удаление продукта
  * @access Private
  */
@@ -82,7 +83,7 @@ const remove = async (req, res) => {
 
 /**
  * 
- * @route PUT /api/devices/products/:device_id/edit/:product_id
+ * @route PUT /api/devices/products/:device_id/:product_id/edit
  * @desc Редактирование продукта
  * @access Private
  */

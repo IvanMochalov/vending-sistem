@@ -1,3 +1,7 @@
+.s80 {
+	width: 80px;
+	height: 80px;
+}
 .s60 {
 	width: 60px;
 	height: 60px;
@@ -13,6 +17,10 @@
 .s20 {
 	width: 20px;
 	height: 20px;
+}
+.s18 {
+	width: 18px;
+	height: 18px;
 }
 .s16 {
 	width: 16px;

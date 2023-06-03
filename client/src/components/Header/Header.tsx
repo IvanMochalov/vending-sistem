@@ -1,5 +1,4 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { Paths } from '../../path';
 import { Icon } from '../../Icons';
 import { EIcons } from '../../exports';
 import styles from './header.module.css';
@@ -14,13 +13,13 @@ export const Header = () => {
   const onLogoutClick = () => {
     dispatch(logout());
     localStorage.removeItem('token');
-    navigate(Paths.login)
+    navigate('/login')
   }
   
   return (
     <header className={styles.header}>
       <div className={styles.header__container}>
-        <Link to={Paths.home} className={styles.link__home}>
+        <Link to='/' className={styles.link__home}>
           <Icon name={EIcons.vend} size={40} className={styles.home__icon}/>
           VendFox
         </Link>
@@ -32,11 +31,11 @@ export const Header = () => {
             </div>
           ) : (
             <div className={styles.auth}>
-              <Link to={Paths.register} className={styles.link__auth} replace>
+              <Link to='/register' className={styles.link__auth} replace>
                 <Icon name={EIcons.register} size={20} className={styles.auth__icon}/>
                 Регистрация
               </Link>
-              <Link to={Paths.login} className={styles.link__auth} replace>
+              <Link to='/login' className={styles.link__auth} replace>
                 <Icon name={EIcons.login} size={16} className={styles.auth__icon}/>
                 Вход
               </Link>

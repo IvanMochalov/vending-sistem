@@ -67,7 +67,9 @@
   --blackC4:        #C4C4C4;
   --greenA8:        #A8B64F;
   --green89:        #899441;
-  --orange06:        #E67B06;
+  --orange06:       #E67B06;
+  --orange4b:       #deae20;
+  --violet:         #8427C1;
   --redEA:          #EA8979;
   --redEE:          #EE735D;
   --redDC:          #DC3E22;
@@ -94,6 +96,12 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 code {

@@ -1,0 +1,42 @@
+.notFound {
+  display: inline-block;
+  height: 60vh;
+  width: 20%;
+  margin:  auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notFound__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.notFound__icon {
+  fill: var(--orange06);
+}
+
+.notFound__title {
+  font-size: 40px;
+  color: var(--orange06);
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+.notFound__description {
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--orange06);
+  margin-bottom: 25px;
+}
+.notFound__link {
+  padding: 10px 20px;
+  font-size: 30px;
+  line-height: 1;
+  border-radius: 30px;
+  color: var(--whiteFF);
+  background-color: var(--violet);
+}
+.notFound__link:hover {
+  opacity: .9;
+}

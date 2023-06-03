@@ -9,10 +9,10 @@ router.get('/', auth, all);
 router.get('/:device_id', auth, device);
 // POST /api/devices/add
 router.post('/add', auth, add);
-// POST /api/devices/remove/:device_id
-router.post('/remove/:device_id', auth, remove);
-// PUT /api/devices/edit/:device_id
-router.put('/edit/:device_id', auth, edit);
+// POST /api/devices:device_id/remove/
+router.post('/:device_id/remove', auth, remove);
+// PUT /api/devices/:device_id/edit
+router.put('/:device_id/edit', auth, edit);
 
 
 module.exports = router;

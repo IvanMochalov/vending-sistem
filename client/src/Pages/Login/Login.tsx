@@ -1,6 +1,5 @@
 import ReactDOM from 'react-dom';
 import { Link, useNavigate } from 'react-router-dom';
-import { Paths } from '../../path';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { TShippingFiledRegister } from '../../types';
 import { useEffect, useState } from 'react';
@@ -29,7 +28,7 @@ export function Login() {
     try {
       await loginUser(data).unwrap();
       reset()
-      navigate(Paths.devices, {replace: true})
+      navigate('/devices', {replace: true})
     } catch(err) {
       const maybeError = isErrorWithMessage(err)
 
@@ -44,6 +43,7 @@ export function Login() {
   useEffect(() => {
     setFocus("email");
   }, [setFocus]);
+
   
   const node = document.querySelector('#modal_root');
   if (!node) return null;
@@ -51,7 +51,7 @@ export function Login() {
   return ReactDOM.createPortal(
 		<div className={styles.modal}>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        <button className={styles.form__cancel} type="button" onClick={() => {navigate(Paths.home, {replace: true})}}>
+        <button className={styles.form__cancel} type="button" onClick={() => {navigate('/', {replace: true})}}>
           <Icon name={EIcons.cancel} size={28} className={styles.form__cancel_icon} />
         </button>
         <h2 className={styles.form__title}>Вход</h2>
@@ -104,7 +104,7 @@ export function Login() {
         <button type="submit" className={styles.form__button}>Войти</button>
         <span className={styles.no_account}>
           Нет аккаунта?
-          <Link to={Paths.register} className={styles.link__register} replace>
+          <Link to='/register' className={styles.link__register} replace>
             Зарегистрируйтесь
           </Link>
         </span>

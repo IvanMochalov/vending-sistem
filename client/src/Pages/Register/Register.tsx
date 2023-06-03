@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Paths } from '../../path';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { TShippingFiledRegister } from '../../types';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import styles from './register.module.css';
 
 import { EIcons } from '../../exports'
@@ -26,12 +26,30 @@ export function Register() {
   const onSubmit: SubmitHandler<TShippingFiledRegister> = (data) => {
     console.log(data)
     reset()
-    navigate(Paths.devices, {replace: true})
+    navigate('/devices', {replace: true})
   }
   
   useEffect(() => {
     setFocus("name");
   }, [setFocus]);
+
+  // const ref = useRef<HTMLFormElement>(null);
+  // useEffect(() => {
+  //   function handleClick(event: MouseEvent) {
+  //     if (
+  //       event.target instanceof Node &&
+  //       !ref.current?.contains(event.target)
+  //     ) {
+  //       navigate('/', {replace: true})
+  //     }
+  //   }
+
+  //   document.addEventListener("click", handleClick);
+
+  //   return () => {
+  //     document.removeEventListener("click", handleClick);
+  //   };
+  // });
 
   const node = document.querySelector('#modal_root');
   if (!node) return null;
@@ -39,7 +57,7 @@ export function Register() {
   return ReactDOM.createPortal(
 		<div className={styles.modal}>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        <button className={styles.form__cancel} type="button" onClick={() => {navigate(Paths.home, {replace: true})}}>
+        <button className={styles.form__cancel} type="button" onClick={() => {navigate('/', {replace: true})}}>
           <Icon name={EIcons.cancel} size={28} className={styles.form__cancel_icon} />
         </button>
         <h2 className={styles.form__title}>Регистрация</h2>
@@ -143,7 +161,7 @@ export function Register() {
         <button type="submit" className={styles.form__button}>Войти</button>
         <span className={styles.has_account}>
           Есть аккаунт?
-          <Link to={Paths.login} className={styles.link__login} replace>
+          <Link to='/login' className={styles.link__login} replace>
             Войдите
           </Link>
         </span>

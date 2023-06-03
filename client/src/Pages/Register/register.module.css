@@ -117,6 +117,10 @@
   stroke-width: 1.5px;
   stroke-linecap: round;
   stroke-linejoin: round;
+  transition: background-color .2s ease-in-out;
+}
+.form__cancel:hover .form__cancel_icon {
+  background-color: rgba(54, 54, 54, 0.2);
 }
 .input__ok,
 .input__no {

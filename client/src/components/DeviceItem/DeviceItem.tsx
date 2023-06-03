@@ -14,23 +14,18 @@ interface IDeviceProps {
 
 export const DeviceItem = ({
   deviceId,
-  // userId
+  // userId,
   deviceName,
   location,
   started,
 }: IDeviceProps) => {
+
   return (
     <Link className={styles.device} to={`${Paths.devices}/${deviceId}`}>
       <h3 className={styles.device__name}>{deviceName}</h3>
       <p className={styles.device__description}>
         {`Started ${convertData(started)} in ${location}`}
       </p>
-      {/* <div className={styles.device__id}>
-        {deviceId}
-      </div>
-      <div className={styles.device__userId}>
-        {userId}
-      </div> */}
     </Link>
   )
 }

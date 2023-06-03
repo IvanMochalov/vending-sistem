@@ -47,7 +47,7 @@ const add = async (req, res) => {
 
 /**
  * 
- * @route POST /api/devices/remove/:device_id
+ * @route POST /api/devices/:device_id/remove
  * @desc Удаление аппарата
  * @access Private
  */
@@ -59,6 +59,23 @@ const remove = async (req, res) => {
     }
     
     const { device_id } = req.params;
+    // Promise.all(
+    //   prisma.product.delete({
+    //     where: {
+    //       deviceId: device_id
+    //     }
+    //   }),
+    //   prisma.device.delete({
+    //     where: {
+    //       id: device_id,
+    //     }
+    //   })
+    // ).then(res => res.status(204).json({ message: 'Аппарат успешно удален' }))
+    // await prisma.product.delete({
+    //   where: {
+    //     deviceId: device_id
+    //   }
+    // })
     await prisma.device.delete({
       where: {
         id: device_id,
@@ -72,7 +89,7 @@ const remove = async (req, res) => {
 
 /**
  * 
- * @route PUT /api/devices/edit/:device_id
+ * @route PUT /api/devices/:device_id/edit
  * @desc Редактирование аппарата
  * @access Private
  */
