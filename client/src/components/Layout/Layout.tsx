@@ -43,8 +43,8 @@ export const Layout = () => {
 					{(location.pathname === `/devices` ||
 						location.pathname === `/devices/add`) && (
 						<>
-							<Link className={styles.title} to='/devices'>
-								Мои аппараты
+							<Link className={styles.title} to='/'>
+								На главную
 							</Link>
 							<Link className={styles.add__device} to='/devices/add'>
 								<Icon
@@ -56,13 +56,25 @@ export const Layout = () => {
 							</Link>
 						</>
 					)}
-					{location.pathname === `/` && (
+					{location.pathname === `/` && user && (
 						<>
 							<Link className={styles.title} to='/devices'>
 								Мои аппараты
 							</Link>
 							<p className={styles.user__name}>{user?.name}</p>
 						</>
+					)}
+					{location.pathname === `/` && !user && (
+						<div className={styles.need__login}>
+							<Icon
+									name={EIcons.data_locked}
+									size={60}
+									className={styles.noData_icon}
+								/>
+								<Link to='/login' className={styles.noUser_text}>
+									You need to log in
+								</Link>
+						</div>
 					)}
 				</nav>
 				<Outlet />

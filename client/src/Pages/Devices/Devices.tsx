@@ -4,7 +4,6 @@ import { DeviceItem } from '../../components/DeviceItem'
 import { Icon } from '../../Icons'
 import { EIcons } from '../../exports'
 import { Link, Outlet, useLocation } from 'react-router-dom'
-import { Paths } from '../../path'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../features/auth/authSlice'
 import { useEffect } from 'react'
@@ -32,7 +31,7 @@ export const Devices = () => {
 									size={60}
 									className={styles.noData_icon}
 								/>
-								<Link to={Paths.login} className={styles.noUser_text}>
+								<Link to='/login' className={styles.noUser_text}>
 									You need to log in
 								</Link>
 							</>

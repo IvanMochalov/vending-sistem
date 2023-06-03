@@ -6,6 +6,8 @@ import { convertData } from '../../utils/convertData'
 import { useSelector } from 'react-redux'
 
 import { selectUser } from '../../features/auth/authSlice'
+import { Icon } from '../../Icons'
+import { EIcons } from '../../exports'
 
 export const DeviceStatistics = () => {
 	const { device_id } = useParams<{ device_id: string }>()
@@ -18,6 +20,14 @@ export const DeviceStatistics = () => {
 				{data && (
 					<div className={styles.description__container}>
 						<div className={styles.products__description}>
+							<Link to={`/devices/products/${device_id}/add`} className={styles.products__add}>
+								<Icon
+									name={EIcons.add}
+									size={14}
+									className={styles.add__icon}
+								/>
+								Добавить продукт
+							</Link>
 							{device_id && <ProductsList deviceId={device_id} />}
 						</div>
 						<div className={styles.device__management}>

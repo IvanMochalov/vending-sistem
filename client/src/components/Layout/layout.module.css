@@ -64,3 +64,18 @@
   font-size: 36px;
   color: var(--whiteFF);
 }
+.need__login {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.noData_icon {
+  margin-bottom: 10px;
+  fill: var(--black33);
+  stroke: var(--black33);
+}
+.noUser_text {
+  font-size: 20px;
+}

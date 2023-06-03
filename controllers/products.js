@@ -7,10 +7,10 @@ const { prisma } = require('../prisma/prisma-client');
  */
 const all = async (req, res) => {
   try {
+    console.log('req.params', req.params)
     if(!req.params.device_id) {
       throw Error('no device_id')
     }
-    
     const { device_id } = req.params
 
     const products = await prisma.product.findMany({

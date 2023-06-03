@@ -59,23 +59,12 @@ const remove = async (req, res) => {
     }
     
     const { device_id } = req.params;
-    // Promise.all(
-    //   prisma.product.delete({
-    //     where: {
-    //       deviceId: device_id
-    //     }
-    //   }),
-    //   prisma.device.delete({
-    //     where: {
-    //       id: device_id,
-    //     }
-    //   })
-    // ).then(res => res.status(204).json({ message: 'Аппарат успешно удален' }))
-    // await prisma.product.delete({
-    //   where: {
-    //     deviceId: device_id
-    //   }
-    // })
+
+    await prisma.product.deleteMany({
+      where: {
+        deviceId: device_id
+      }
+    })
     await prisma.device.delete({
       where: {
         id: device_id,

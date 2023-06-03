@@ -2,6 +2,7 @@
   display: flex;
 }
 .products__description {
+  position: relative;
   width: 60%;
   display: inline-flex;
   align-items: center;
@@ -51,4 +52,26 @@
 }
 .controller__edit {
   background-color: var(--greenA8);
+}
+.products__add {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  padding: 8px 10px;
+  font-weight: 400;
+  border-radius: 40px;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--whiteFF);
+  background-color: var(--violet);
+}
+.products__add:hover {
+  opacity: .9;
+}
+.add__icon {
+  fill: var(--whiteFF);
+  margin-right: 5px;
 }
