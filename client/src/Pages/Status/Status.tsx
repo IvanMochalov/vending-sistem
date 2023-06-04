@@ -1,5 +1,5 @@
 import styles from './status.module.css'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Icon } from '../../Icons'
 import { EIcons } from '../../exports'
 import { NotFound } from '../NotFound'
@@ -15,11 +15,11 @@ const Statuses: Record<string, string> = {
 
 export const Status = () => {
 	const { status } = useParams()
-	const navigate = useNavigate();
+	const navigate = useNavigate()
 	return (
 		<>
-			{status ? ((status && (Statuses[status] !== undefined) ? (
-				
+			{status ? (
+				status && Statuses[status] !== undefined ? (
 					<div className={styles.status}>
 						<div className={styles.status__content}>
 							<Icon
@@ -28,21 +28,23 @@ export const Status = () => {
 								className={styles.status__icon}
 							/>
 							<p className={styles.status__title}>{Statuses[status]}</p>
-							{(status === 'created' || status === 'updated' || status === 'deleted') ? (
-								<Link to='/devices' className={styles.status__link} replace>
-									Мои аппараты
-								</Link>
-							) : (
-								<button onClick={() => {navigate(-1)}} className={styles.status__link} >
-									Мои продукты
-								</button>
-							)}
+							<button
+								onClick={() => {
+									navigate(-1)
+								}}
+								className={styles.status__link}
+							>
+								{status === 'created' ||
+								status === 'updated' ||
+								status === 'deleted'
+									? `К аппаратам`
+									: `К продуктам`}
+							</button>
 						</div>
 					</div>
-				
-			) : (
-				<NotFound />
-			))
+				) : (
+					<NotFound />
+				)
 			) : (
 				<NotFound />
 			)}
