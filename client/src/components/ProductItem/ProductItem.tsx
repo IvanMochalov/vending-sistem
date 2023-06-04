@@ -1,11 +1,9 @@
-import React from 'react';
 import styles from './productItem.module.css'
-
 interface IProductProps {
   readonly key: string;
   productId: string;
-  productName: string;
   userId: string;
+  productName: string;
   deviceId: string;
   count: string;
   price: string;

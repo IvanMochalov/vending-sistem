@@ -21,10 +21,6 @@ const slice = createSlice({
     builder
       .addMatcher(deviceApi.endpoints.getAllDevices.matchFulfilled, (state, action) => {
         state.devices = action.payload;
-      }),
-    builder
-      .addMatcher(deviceApi.endpoints.addDevice.matchFulfilled, (state, action) => {
-        state.devices?.push(action.payload);
       })
   }
 })
