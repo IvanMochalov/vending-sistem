@@ -27,7 +27,8 @@ export const Layout = () => {
 				<nav className={styles.navigation}>
 					{(location.pathname === `/devices/${device_id}` ||
 						location.pathname === `/devices/${device_id}/remove` ||
-						location.pathname === `/devices/${device_id}/edit`) && data && (
+						location.pathname === `/devices/${device_id}/edit` || 
+						location.pathname === `/devices/${device_id}/products/add`) && data && (
 						<>
 							<p className={styles.title}>{data?.modelName}</p>
 							<Link className={styles.title_little} to='/devices'>

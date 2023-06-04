@@ -183,8 +183,6 @@ const product = async (req, res) => {
  * @access Private
  */
 const addProduct = async (req, res) => {
-  console.log('body',req.body)
-  console.log('params',req.params)
 	try {
 		if (!req.params.device_id) {
 			throw Error('no device_id')

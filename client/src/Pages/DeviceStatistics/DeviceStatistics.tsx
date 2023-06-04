@@ -20,7 +20,7 @@ export const DeviceStatistics = () => {
 				{data && (
 					<div className={styles.description__container}>
 						<div className={styles.products__description}>
-							<Link to={`/devices/products/${device_id}/add`} className={styles.products__add}>
+							<Link to={`/devices/${device_id}/products/add`} className={styles.products__add}>
 								<Icon
 									name={EIcons.add}
 									size={14}

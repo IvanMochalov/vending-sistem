@@ -10,6 +10,7 @@ import { AddDevice } from './Pages/AddDevice'
 import { Status } from './Pages/Status'
 import { NotFound } from './Pages/NotFound'
 import { EditDevice } from './Pages/EditDevice/EditDevice'
+import { AddProduct } from './Pages/AddProduct'
 
 const App: React.FC = () => {
 	return (
@@ -18,7 +19,6 @@ const App: React.FC = () => {
 				<Route path='/status/:status' element={<Status />} />
 				<Route path='/devices' element={<Devices />}>
 					<Route path='/devices/add' element={<AddDevice />} />
-					{/* <Route path='/devices/products/:device_id/add' element={<>ADD PRODUCT</>} /> */}
 				</Route>
 				<Route path='/register' element={<Register />} />
 				<Route path='/login' element={<Login />} />
@@ -28,6 +28,7 @@ const App: React.FC = () => {
 						path={`/devices/:device_id/remove`}
 						element={<RemoveModal />}
 					/>
+					<Route path='/devices/:device_id/products/add' element={<AddProduct />} />
 				</Route>
 				{/* </Route> */}
 				{/* <Route path='/statistics' element={<StatisticsPage />} /> */}
