@@ -29,7 +29,8 @@ export const Layout = () => {
 						location.pathname === `/devices/${device_id}/remove` ||
 						location.pathname === `/devices/${device_id}/edit` || 
 						location.pathname === `/devices/${device_id}/products/add` ||
-						location.pathname === `/devices/${device_id}/products/${product_id}/remove`
+						location.pathname === `/devices/${device_id}/products/${product_id}/remove` ||
+						location.pathname === `/devices/${device_id}/products/${product_id}/edit`
 						) && data && (
 						<>
 							<p className={styles.title}>{data?.modelName}</p>
