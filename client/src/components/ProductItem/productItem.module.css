@@ -7,13 +7,33 @@
 .productList__item:nth-child(n+2) {
   border-top: 1px solid var(--black99);
 }
+.product__name {
+  font-weight: 500;
+  font-size: 18px;
+}
 .product__numbers {
   padding: 5px 0;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 1.5;
 }
-.product__price {
-  padding-right: 5px;
+.numbers__link {
+  display: flex;
+}
+.numbers__item:not(:last-child) {
+  margin-right: 7px;
+  padding-right: 7px;
   border-right: 1px solid var(--black99);
 }
-.product__count {
-  padding-left: 5px;
+.delete__icon,
+.edit__icon {
+  cursor: pointer;
+  fill: var(--redDC);
+}
+.edit__icon {
+  fill: var(--greenA8);
+}
+.product__icon:hover {
+  background-color: rgba(20, 20, 20, 0.1);;
 }

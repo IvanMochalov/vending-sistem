@@ -10,7 +10,7 @@ interface IIconsProps {
   className?: string;
 }
 
-type TSizes = 80 | 60 | 40 | 28 | 20 | 18 | 16 | 15 | 14 | 12 | 10;
+type TSizes = 80 | 60 | 40 | 28 | 24 | 20 | 18 | 16 | 15 | 14 | 12 | 10;
 
 export function Icon(props: IIconsProps) {
   const {
@@ -41,10 +41,23 @@ export function Icon(props: IIconsProps) {
           <path d="M18 3L18 9"/>
         </svg>
       )
+    case EIcons.edit :
+      return (
+        <svg className={`${classes} ${className}`} viewBox="0 0 258 258" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M151.145 96.965L161.035 106.855L63.64 204.25H53.75V194.36L151.145 96.965V96.965ZM189.845 32.25C187.157 32.25 184.362 33.325 182.32 35.3675L162.648 55.04L202.96 95.3525L222.632 75.68C226.825 71.4875 226.825 64.715 222.632 60.5225L197.478 35.3675C195.328 33.2175 192.64 32.25 189.845 32.25V32.25ZM151.145 66.5425L32.25 185.438V225.75H72.5625L191.457 106.855L151.145 66.5425V66.5425Z"/>
+        </svg>
+        
+      )
     case EIcons.login :
       return (
         <svg className={`${classes} ${className}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 8L16 12M16 12L12 16M16 12H3M3.33782 7C5.06687 4.01099 8.29859 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C8.29859 22 5.06687 19.989 3.33782 17"/>
+        </svg>
+      )
+    case EIcons.delete :
+      return (
+        <svg className={`${classes} ${className}`} viewBox="0 0 258 258" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M172 96.75V204.25H86V96.75H172ZM155.875 32.25H102.125L91.375 43H53.75V64.5H204.25V43H166.625L155.875 32.25ZM193.5 75.25H64.5V204.25C64.5 216.075 74.175 225.75 86 225.75H172C183.825 225.75 193.5 216.075 193.5 204.25V75.25Z"/>
         </svg>
       )
     case EIcons.notFound :

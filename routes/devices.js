@@ -33,7 +33,7 @@ router.get('/:device_id/products/:product_id', auth, product)
 router.post('/:device_id/products/add', auth, addProduct)
 // POST /api/devices/:device_id/products/:product_id/remove
 router.post('/:device_id/products/:product_id/remove', auth, removeProduct)
-// PUT /api/devices/:device_id/products/:product_id/remove
+// PUT /api/devices/:device_id/products/:product_id/edit
 router.put('/:device_id/products/:product_id/edit', auth, editProduct)
 
 module.exports = router

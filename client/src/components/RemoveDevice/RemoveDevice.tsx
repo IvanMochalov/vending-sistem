@@ -1,4 +1,4 @@
-import styles from './removeModal.module.css'
+import styles from './removeDevice.module.css'
 import { EIcons } from '../../exports'
 import { Icon } from '../../Icons'
 import { useEffect, useRef, useState } from 'react'
@@ -11,12 +11,12 @@ import { isErrorWithMessage } from '../../utils/is-error-with-message'
 import { createPortal } from 'react-dom'
 import { ErrorMessage } from '../ErrorMessage'
 
-export const RemoveModal = () => {
+export const RemoveDevice = () => {
 	const navigate = useNavigate()
 	const [error, setError] = useState('')
 	const [removeDevice] = useRemoveDeviceMutation()
 	const { device_id } = useParams<{ device_id: string }>()
-	const { data, isLoading } = useGetDeviceQuery(device_id || '')
+	const { data, isLoading } = useGetDeviceQuery(device_id as string)
 
 	const ref = useRef<HTMLDivElement>(null)
 	useEffect(() => {
@@ -69,7 +69,6 @@ export const RemoveModal = () => {
 							type='button'
 							onClick={() => {
 								navigate(-1)
-								console.log('закрыл')
 							}}
 						>
 							<Icon
@@ -83,7 +82,6 @@ export const RemoveModal = () => {
 							className={styles.btn_delete}
 							onClick={() => {
 								handleDeleteDevice()
-								console.log('want delete')
 							}}
 						>
 							Удалить
@@ -92,7 +90,6 @@ export const RemoveModal = () => {
 							className={styles.cancellation}
 							onClick={() => {
 								navigate(-1)
-								console.log(`передумал`)
 							}}
 						>
 							Отмена

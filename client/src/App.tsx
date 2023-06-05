@@ -5,12 +5,14 @@ import { Register } from './Pages/Register'
 import { Layout } from './components/Layout'
 import { Devices } from './Pages/Devices'
 import { DeviceStatistics } from './Pages/DeviceStatistics/DeviceStatistics'
-import { RemoveModal } from './components/RemoveModal'
+import { RemoveDevice } from './components/RemoveDevice'
 import { AddDevice } from './Pages/AddDevice'
 import { Status } from './Pages/Status'
 import { NotFound } from './Pages/NotFound'
 import { EditDevice } from './Pages/EditDevice/EditDevice'
 import { AddProduct } from './Pages/AddProduct'
+import { RemoveProduct } from './components/RemoveProduct'
+import { EditProduct } from './Pages/EditProduct'
 
 const App: React.FC = () => {
 	return (
@@ -26,8 +28,10 @@ const App: React.FC = () => {
 					<Route path={`/devices/:device_id/edit`} element={<EditDevice />} />
 					<Route
 						path={`/devices/:device_id/remove`}
-						element={<RemoveModal />}
+						element={<RemoveDevice />}
 					/>
+					<Route path='/devices/:device_id/products/:product_id/remove' element={<RemoveProduct />} />
+					<Route path='/devices/:device_id/products/:product_id/edit' element={<EditProduct />} />
 					<Route path='/devices/:device_id/products/add' element={<AddProduct />} />
 				</Route>
 				{/* </Route> */}

@@ -134,7 +134,6 @@ const device = async (req, res) => {
  */
 const allProducts = async (req, res) => {
 	try {
-		console.log('req.params', req.params)
 		if (!req.params.device_id) {
 			throw Error('no device_id')
 		}
@@ -163,7 +162,6 @@ const product = async (req, res) => {
 		if (!req.params.product_id) {
 			throw Error('no product_id')
 		}
-		console.log('object', req.params)
 		const { product_id } = req.params
 		const product = await prisma.product.findUnique({
 			where: {
@@ -208,55 +206,55 @@ const addProduct = async (req, res) => {
 }
 
 /**
- * 
+ *
  * @route POST /api/devices/:device_id/products/:product_id/remove
  * @desc Удаление продукта
  * @access Private
  */
 const removeProduct = async (req, res) => {
-  try {
-    if(!req.params.product_id) {
-      throw Error('no product_id')
-    }
+	try {
+		if (!req.params.product_id) {
+			throw Error('no product_id')
+		}
 
-    const { product_id } = req.params;
-    
-    await prisma.product.delete({
-      where: {
-        id: product_id,
-      }
-    });
-    res.status(204).json({ message: 'Продукт успешно удален' })
-  } catch {
-    return res.status(500).json({ message: 'Не удалось удалить продукт' })
-  }
+		const { product_id } = req.params
+
+		await prisma.product.delete({
+			where: {
+				id: product_id,
+			},
+		})
+		res.status(204).json({ message: 'Продукт успешно удален' })
+	} catch {
+		return res.status(500).json({ message: 'Не удалось удалить продукт' })
+	}
 }
 
 /**
- * 
+ *
  * @route PUT /api/devices/:device_id/products/:product_id/edit
  * @desc Редактирование продукта
  * @access Private
  */
 const editProduct = async (req, res) => {
-  try {
-    if(!req.params.product_id) {
-      throw Error('no product_id')
-    }
-    
-    const data = req.body;
-    const { product_id } = req.params;
-    
-    await prisma.product.update({
-      where: {
-        id: product_id,
-      },
-      data
-    });
-    res.status(204).json({ message: 'Продукт успешно изменен' })
-  } catch {
-    return res.status(500).json({ message: 'Не удалось редактировать продукт' })
-  }
+	try {
+		if (!req.params.product_id) {
+			throw Error('no product_id')
+		}
+
+		const data = req.body
+		const { product_id } = req.params
+
+		await prisma.product.update({
+			where: {
+				id: product_id,
+			},
+			data,
+		})
+		res.status(204).json({ message: 'Продукт успешно изменен' })
+	} catch {
+		return res.status(500).json({ message: 'Не удалось редактировать продукт' })
+	}
 }
 
 module.exports = {
@@ -268,6 +266,6 @@ module.exports = {
 	allProducts,
 	product,
 	addProduct,
-  removeProduct,
-  editProduct,
+	removeProduct,
+	editProduct,
 }

@@ -1,0 +1,74 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.content {
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  padding: 20px 35px;
+  background-color: var(--whiteFF);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px var(--black33);
+  z-index: 1;
+  user-select: none;
+}
+.title {
+  font-size: 24px;
+  line-height: 17px;
+  color: var(--black33);
+  margin-bottom: 25px;
+}
+.btn_delete {
+  padding: 19px 50px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: var(--whiteFF);
+  background-color: var(--redDC);
+}
+.btn_delete:hover {
+  background: var(--redB7);
+}
+.cancellation {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 17px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.form__cancel {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.form__cancel:hover .form__cancel_icon {
+  background-color: rgba(54, 54, 54, 0.2);
+}
+.form__cancel_icon {
+  stroke: var(--black33); 
+  stroke-width: 1.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: background-color .2s ease-in-out;
+}

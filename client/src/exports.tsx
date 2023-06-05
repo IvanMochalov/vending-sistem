@@ -28,4 +28,6 @@ export enum EIcons {
 	add,
 	success,
 	notFound,
+	delete,
+	edit
 }
