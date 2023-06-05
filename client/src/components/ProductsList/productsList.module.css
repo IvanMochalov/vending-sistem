@@ -1,3 +1,23 @@
 .products__content {
   width: 100%;
 }
+.products__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.noData_icon {
+  margin-bottom: 10px;
+  fill: var(--black33);
+  stroke: var(--black33);
+}
+.noUser_text,
+.noData_text {
+  font-size: 20px;
+}
+.loading {
+  text-align: center;
+}
+.emptyData_text {
+  font-size: 20px;
+}

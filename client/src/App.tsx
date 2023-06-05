@@ -34,8 +34,6 @@ const App: React.FC = () => {
 					<Route path='/devices/:device_id/products/:product_id/edit' element={<EditProduct />} />
 					<Route path='/devices/:device_id/products/add' element={<AddProduct />} />
 				</Route>
-				{/* </Route> */}
-				{/* <Route path='/statistics' element={<StatisticsPage />} /> */}
 			</Route>
 			<Route path='*' element={<NotFound />} />
 		</Routes>
