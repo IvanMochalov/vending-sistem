@@ -9,11 +9,21 @@ import { EIcons } from '../../exports'
 import { UserData, useLoginMutation } from '../../app/services/auth'
 import { isErrorWithMessage } from '../../utils/is-error-with-message'
 import { ErrorMessage } from '../../components/ErrorMessage'
+import { useSelector } from 'react-redux'
+import { selectUser } from '../../features/auth/authSlice'
 
 export function Login() {
-	const [loginUser] = useLoginMutation()
-	const [error, setError] = useState('')
+	const user = useSelector(selectUser)
 	const navigate = useNavigate()
+	const [error, setError] = useState('')
+	const [loginUser] = useLoginMutation()
+
+	useEffect(() => {
+		if (user) {
+			navigate('/', { replace: true })
+		}
+	}, [user, navigate])
+
 	const {
 		register,
 		handleSubmit,

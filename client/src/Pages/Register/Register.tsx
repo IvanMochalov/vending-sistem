@@ -17,8 +17,8 @@ import { ErrorMessage } from '../../components/ErrorMessage'
 type TRegisterData = Omit<User, 'id'> & { confirmPassword: string }
 
 export function Register() {
-	const navigate = useNavigate()
 	const user = useSelector(selectUser)
+	const navigate = useNavigate()
 	const [error, setError] = useState('')
 	const [registerUser] = useRegisterMutation()
 
