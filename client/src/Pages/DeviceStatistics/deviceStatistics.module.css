@@ -1,5 +1,6 @@
 .description__container {
   display: flex;
+  margin-bottom: 25px;
 }
 .device__management{
   width: calc(40% - 25px);

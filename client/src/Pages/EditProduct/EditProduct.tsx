@@ -62,9 +62,6 @@ export const EditProduct = () => {
 		dataForm: Product
 	) => {
 		try {
-			if (!device_id) {
-				throw Error('no device_id')
-			}
 			const editedProduct = {
 				...data,
 				...dataForm,
