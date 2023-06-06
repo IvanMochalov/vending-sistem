@@ -13,11 +13,13 @@ import { EditDevice } from './Pages/EditDevice/EditDevice'
 import { AddProduct } from './Pages/AddProduct'
 import { RemoveProduct } from './components/RemoveProduct'
 import { EditProduct } from './Pages/EditProduct'
+import { Home } from './Pages/Home'
 
 const App: React.FC = () => {
 	return (
 		<Routes>
 			<Route path='/' element={<Layout />}>
+				<Route index element={<Home />} />
 				<Route path='/status/:status' element={<Status />} />
 				<Route path='/devices' element={<Devices />}>
 					<Route path='/devices/add' element={<AddDevice />} />

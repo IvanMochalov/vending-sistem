@@ -40,7 +40,7 @@ export function Login() {
 		try {
 			await loginUser(data).unwrap()
 			reset()
-			navigate('/devices', { replace: true })
+			navigate('/', { replace: true })
 		} catch (err) {
 			const maybeError = isErrorWithMessage(err)
 

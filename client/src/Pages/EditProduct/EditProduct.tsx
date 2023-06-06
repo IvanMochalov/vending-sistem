@@ -1,12 +1,12 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import styles from './editProduct.module.css'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import {
 	TGetProductParams,
 	useEditProductMutation,
 	useGetProductQuery,
 } from '../../app/services/product'
-import { SubmitHandler, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { TShippingFiledAddProduct } from '../../types'
 import { Product } from '@prisma/client'
 import { isErrorWithMessage } from '../../utils/is-error-with-message'
@@ -51,16 +51,16 @@ export const EditProduct = () => {
 		setFocus,
 	} = useForm<TShippingFiledAddProduct>({
 		mode: 'onChange',
-		defaultValues: {
-			name: data?.name,
-			count: data?.count,
-			price: data?.price,
-		},
+		defaultValues: useMemo(() => {
+      return data;
+    }, [data]),
 	})
 
-	const onSubmit: SubmitHandler<TShippingFiledAddProduct> = async (
-		dataForm: Product
-	) => {
+	useEffect(() => {
+    reset(data);
+  }, [data, reset]);
+
+	async function onSubmit(dataForm: Product) {
 		try {
 			const editedProduct = {
 				...data,
@@ -123,6 +123,7 @@ export const EditProduct = () => {
 										value: 3,
 										message: "Minimum 3 letter's",
 									},
+									
 								})}
 								aria-invalid={errors.name?.message ? 'true' : undefined}
 								type='text'

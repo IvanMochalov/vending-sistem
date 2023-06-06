@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import styles from './editDevice.module.css'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import {
 	useEditDeviceMutation,
 	useGetDeviceQuery,
@@ -9,7 +9,7 @@ import { Icon } from '../../Icons'
 import { EIcons } from '../../exports'
 import { createPortal } from 'react-dom'
 import { TShippingFiledAddDevice } from '../../types'
-import { SubmitHandler, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { Device } from '@prisma/client'
 import { isErrorWithMessage } from '../../utils/is-error-with-message'
 import { ErrorMessage } from '../../components/ErrorMessage'
@@ -47,15 +47,16 @@ export const EditDevice = () => {
 		setFocus,
 	} = useForm<TShippingFiledAddDevice>({
 		mode: 'onChange',
-		defaultValues: {
-			modelName: data?.modelName,
-			location: data?.location,
-		},
+		defaultValues: useMemo(() => {
+      return data;
+    }, [data]),
 	})
 
-	const onSubmit: SubmitHandler<TShippingFiledAddDevice> = async (
-		dataForm: Device
-	) => {
+	useEffect(() => {
+    reset(data);
+  }, [data, reset]);
+
+	async function onSubmit(dataForm: Device) {
 		try {
 			const editedDevice = {
 				...data,
