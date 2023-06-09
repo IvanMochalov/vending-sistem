@@ -4,9 +4,8 @@ import styles from './productsList.module.css'
 import { ProductItem } from '../ProductItem'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../features/auth/authSlice'
-import { Icon } from '../../Icons'
-import { EIcons } from '../../exports'
-import { Link } from 'react-router-dom'
+import { NoData } from '../NoData'
+import { NeedLogin } from '../NeedLogin'
 
 interface IProductsListProps {
 	deviceId: string
@@ -22,26 +21,10 @@ export const ProductsList = ({ deviceId }: IProductsListProps) => {
 			<div className={styles.products__content}>
 				{!isLoading && (
 					<ul className={styles.products__list}>
-							{!user ? (
-							<>
-								<Icon
-									name={EIcons.data_locked}
-									size={60}
-									className={styles.noData_icon}
-								/>
-								<Link to='/login' className={styles.noUser_text}>
-									You need to log in
-								</Link>
-							</>
+						{!user ? (
+							<NeedLogin />
 						) : !data  ? (
-							<>
-								<Icon
-									name={EIcons.no_data}
-									size={60}
-									className={styles.noData_icon}
-								/>
-								<span className={styles.noData_text}>Data is missing</span>
-							</>
+							<NoData />
 						) : (data.length !== 0) ? (
 							data.map(
 								(product: Product) => (
@@ -57,14 +40,7 @@ export const ProductsList = ({ deviceId }: IProductsListProps) => {
 								)
 							)
 						) : (
-							<>
-								<Icon
-									name={EIcons.no_data}
-									size={60}
-									className={styles.noData_icon}
-								/>
-								<span className={styles.emptyData_text}>Список пуст</span>
-							</>
+							<NoData text='Список пуст'/>
 						)}
 					</ul>
 				)}

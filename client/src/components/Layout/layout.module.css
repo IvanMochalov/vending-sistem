@@ -70,12 +70,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: var(--black99)
 }
 .noData_icon {
   margin-bottom: 10px;
-  fill: var(--black33);
-  stroke: var(--black33);
+  fill: currentColor;
+  stroke: currentColor;
 }
 .noUser_text {
   font-size: 20px;
+  color: currentColor;
+  text-decoration: underline;
 }

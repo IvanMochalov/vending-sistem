@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Icon } from '../../Icons'
 import { EIcons } from '../../exports'
 import styles from './productItem.module.css'

@@ -6,7 +6,9 @@
     "start": "node ./bin/www",
     "server": "nodemon ./bin/www",
     "client": "npm run dev --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "preview": "npm run preview --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "prod": "concurrently \"npm run server\" \"npm run preview\""
   },
   "dependencies": {
     "@prisma/client": "^4.14.1",

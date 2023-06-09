@@ -30,18 +30,14 @@ export const Status = () => {
 							<p className={styles.status__title}>{Statuses[status]}</p>
 							<button
 								onClick={() => {
-									{status === 'created' ||
-									status === 'updated' ||
-									status === 'deleted'
-										? navigate('/devices', {replace: true})
-										: navigate(-1)}
+									{status === 'deleted' ? navigate('/devices', {replace: true}) : navigate(-1)}
 								}}
 								className={styles.status__link}
 							>
 								{status === 'created' ||
 								status === 'updated' ||
 								status === 'deleted'
-									? `К аппаратам`
+									? (status === 'deleted' || status === 'created' ? `К аппаратам` : `К аппарату`)
 									: `К продуктам`}
 							</button>
 						</div>

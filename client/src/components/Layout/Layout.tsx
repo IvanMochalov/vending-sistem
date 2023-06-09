@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux'
 import { Icon } from '../../Icons'
 import { EIcons } from '../../exports'
 import { NotFound } from '../../Pages/NotFound'
+import { NeedLogin } from '../NeedLogin'
 
 export const Layout = () => {
 	const { device_id, product_id } = useParams<{ device_id: string, product_id: string }>()
@@ -69,16 +70,7 @@ export const Layout = () => {
 						</>
 					)}
 					{location.pathname === `/` && !user && (
-						<div className={styles.need__login}>
-							<Icon
-									name={EIcons.data_locked}
-									size={60}
-									className={styles.noData_icon}
-								/>
-								<Link to='/login' className={styles.noUser_text}>
-									You need to log in
-								</Link>
-						</div>
+						<NeedLogin />
 					)}
 				</nav>
 				<Outlet />

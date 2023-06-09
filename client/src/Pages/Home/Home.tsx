@@ -1,17 +1,28 @@
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../features/auth/authSlice'
 import { useGetAllDevicesQuery } from '../../app/services/device'
-import { useState } from 'react'
-import styles from './home.module.css'
+import { useEffect } from 'react'
+import { MapHome } from '../../components/MapHome/MapHome'
+import { useNavigate } from 'react-router-dom'
 
 export const Home = () => {
+  const navigate = useNavigate();
   const user = useSelector(selectUser)
 	const { data, isLoading } = useGetAllDevicesQuery()
-  const [error, setError] = useState('')
+
+
+  useEffect(() => {
+		if (!user) {
+			navigate('/', { replace: true })
+		}
+	}, [user, navigate])
+
   return (
-    <div>
-      
-    </div>
+    <>
+			{!isLoading && data && (
+        <MapHome />
+        )}
+    </>
   )
 }
 

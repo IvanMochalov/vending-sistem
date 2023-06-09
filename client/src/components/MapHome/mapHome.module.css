@@ -1,0 +1,42 @@
+.home__map_container {
+  display: flex;
+  align-items: flex-start;
+}
+.home__map_wrapper {
+  margin-right: 25px;
+  height: 300px;
+  min-width: 60%;
+  max-width: 70%;
+  overflow: hidden;
+  border: 2px solid var(--greenA8);
+  border-radius: 20px;
+}
+.devicesList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.device {
+  width: 100%;
+  position: relative;
+  background-color: var(--white);
+  border-radius: 7px;
+  padding: 20px 10px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  color: var(--black33);
+  border: 1px solid var(--black99);
+  min-height: 40px;
+  cursor: pointer;
+}
+.device:hover {
+  border-color: var(--black33);
+  box-shadow: 0px 0px 15px 2px rgba(34, 60, 80, 0.1);
+}
+.device_btn {
+  background-color: transparent;
+}

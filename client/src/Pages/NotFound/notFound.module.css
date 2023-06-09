@@ -14,9 +14,8 @@
   align-items: center;
 }
 .notFound__icon {
-  fill: var(--orange06);
+  margin-bottom: 10px;
 }
-
 .notFound__title {
   font-size: 40px;
   color: var(--orange06);

@@ -1,0 +1,17 @@
+.noData {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--black99)
+}
+.noData__icon {
+  margin-bottom: 10px;
+  fill: currentColor;
+  stroke: currentColor;
+}
+.noData__text {
+  font-size: 20px;
+  color: currentColor;
+}
